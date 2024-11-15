@@ -1,0 +1,150 @@
+/* styles.css */
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+#nameInput {
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  width: 150px;
+  box-sizing: border-box;
+}
+
+#letterInput {
+  padding: 10px;
+  font-size: 16px;
+  flex: 1;
+  min-width: 150px;
+  box-sizing: border-box;
+}
+
+#tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  position: relative;
+  transition: opacity 0.2s ease, margin 0.2s ease, transform 0.2s ease;
+  margin: 5px;
+}
+
+.tag-valid {
+  background-color: #B2F5EA; /* Gentle bluish mint pastel */
+  color: #004D40;
+}
+
+.tag-invalid {
+  background-color: #E0E0E0; /* Gray color */
+  color: #757575;
+}
+
+.tag.removing {
+  opacity: 0;
+  margin: 0;
+  transform: scale(0.95);
+}
+
+.tag .delete-button {
+  background: none;
+  border: none;
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.tag .delete-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#exportButton {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 150px; /* Matches the width of the Name input field */
+  box-sizing: border-box;
+  height: 50px;
+}
+
+#clipboardButton {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  transform: translateY(-2px); /* Nudge upward */
+}
+
+#clipboardButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+/* Optional: Style for success state of clipboard button */
+#clipboardButton.success {
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+#clipboardButton.success:hover {
+  background-color: #218838;
+}
+
+@media screen and (max-width: 600px) {
+  .input-container {
+    flex-direction: column;
+  }
+
+  #nameInput,
+  #letterInput {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  #exportButton,
+  #clipboardButton {
+    width: 100%;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+}
